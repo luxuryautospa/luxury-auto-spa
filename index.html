@@ -20,145 +20,196 @@
   </script>
   <style>
     .card{border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05)}
+    .nav-link{opacity:.85} .nav-link:hover{opacity:1}
     .mobile-nav{display:none}
     @media (max-width: 767px){ .mobile-nav{display:block} .desktop-nav{display:none} }
-    .hidden-lang{display:none}
+    .badge{position:absolute; top:10px; left:10px; font-size:12px; background:rgba(0,0,0,.6); color:#fff; padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.2)}
   </style>
 </head>
 <body class="bg-brand-green text-white font-sans">
+  <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur bg-brand-green/95 border-b border-white/10 shadow-glow">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="bg-black/25 border border-white/15 rounded-xl p-1.5">
-          <img src="./logo.png" alt="Luxury Auto Spa" class="h-12 md:h-14 w-auto drop-shadow" />
+      <a href="#top" class="flex items-center gap-3">
+        <div class="bg-black/30 border border-white/20 rounded-xl p-2">
+          <img src="./logo.png" alt="Luxury Auto Spa" class="h-14 md:h-16 w-auto drop-shadow" />
         </div>
-      </div>
-      <nav class="desktop-nav flex items-center gap-6 text-sm text-white/80">
-        <a href="#services" class="hover:text-brand-gold" data-en="Services" data-es="Servicios">Services</a>
-        <a href="#gallery" class="hover:text-brand-gold" data-en="Gallery" data-es="Galería">Gallery</a>
-        <a href="#reviews" class="hover:text-brand-gold" data-en="Reviews" data-es="Reseñas">Reviews</a>
-        <a href="#about" class="hover:text-brand-gold" data-en="About" data-es="Nosotros">About</a>
-        <a href="#contact" class="hover:text-brand-gold" data-en="Contact" data-es="Contacto">Contact</a>
+      </a>
+      <!-- Desktop nav -->
+      <nav class="desktop-nav flex items-center gap-6 text-sm">
+        <a href="#services" class="nav-link hover:text-brand-gold">Services</a>
+        <a href="#gallery" class="nav-link hover:text-brand-gold">Results Gallery</a>
+        <a href="#reviews" class="nav-link hover:text-brand-gold">Reviews</a>
+        <a href="#about" class="nav-link hover:text-brand-gold">About</a>
+        <a href="#contact" class="nav-link hover:text-brand-gold">Contact</a>
       </nav>
       <div class="flex items-center gap-2">
-        <button id="langBtn" class="inline-flex items-center justify-center rounded-xl px-3 py-2 border border-white/15 text-sm">ES / EN</button>
-        <a href="tel:+14085134353" class="hidden md:inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium bg-brand-gold text-brand-green shadow hover:opacity-90" data-en="Call Now" data-es="Llamar ahora">Call Now</a>
+        <button id="langBtn" class="inline-flex items-center justify-center rounded-xl px-3 py-2 border border-white/15 text-sm">EN / ES</button>
+        <a href="tel:+14085134353" class="hidden md:inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium bg-brand-gold text-brand-green shadow hover:opacity-90">Call Now</a>
         <button id="menuBtn" class="mobile-nav inline-flex items-center justify-center rounded-xl px-3 py-2 border border-white/15">☰</button>
       </div>
     </div>
+    <!-- Mobile menu -->
     <div id="mobileMenu" class="mobile-nav hidden border-t border-white/10">
       <div class="max-w-7xl mx-auto px-4 py-3 grid gap-2 text-sm text-white/85">
-        <a href="#services" class="py-2 border-b border-white/10" data-en="Services" data-es="Servicios">Services</a>
-        <a href="#gallery" class="py-2 border-b border-white/10" data-en="Gallery" data-es="Galería">Gallery</a>
-        <a href="#reviews" class="py-2 border-b border-white/10" data-en="Reviews" data-es="Reseñas">Reviews</a>
-        <a href="#about" class="py-2 border-b border-white/10" data-en="About" data-es="Nosotros">About</a>
-        <a href="#contact" class="py-2" data-en="Contact" data-es="Contacto">Contact</a>
-        <a href="tel:+14085134353" class="mt-2 inline-flex items-center justify-center rounded-2xl px-4 py-2 font-semibold bg-brand-gold text-brand-green" data-en="Call Now" data-es="Llamar ahora">Call Now</a>
+        <a href="#services" class="py-2 border-b border-white/10">Services</a>
+        <a href="#gallery" class="py-2 border-b border-white/10">Results Gallery</a>
+        <a href="#reviews" class="py-2 border-b border-white/10">Reviews</a>
+        <a href="#about" class="py-2 border-b border-white/10">About</a>
+        <a href="#contact" class="py-2">Contact</a>
+        <div class="mt-2 flex items-center justify-between">
+          <span class="text-white/70 text-sm">Language</span>
+          <button id="langBtnMobile" class="inline-flex items-center justify-center rounded-xl px-3 py-2 border border-white/15 text-sm">EN / ES</button>
+        </div>
+        <a href="tel:+14085134353" class="mt-2 inline-flex items-center justify-center rounded-2xl px-4 py-2 font-semibold bg-brand-gold text-brand-green">Call Now</a>
       </div>
     </div>
   </header>
 
-  <section class="text-center py-16 md:py-24">
-    <h1 class="text-4xl md:text-6xl font-bold text-brand-gold" data-en="Luxury Auto Spa" data-es="Luxury Auto Spa">Luxury Auto Spa</h1>
-    <p class="mt-4 text-white/90 max-w-2xl mx-auto" data-en="Professional mobile detailing. We come to you anywhere in Santa Clara, San Mateo, Contra Costa, and Alameda County." data-es="Servicio profesional de detallado móvil. Llegamos a donde estés en Santa Clara, San Mateo, Contra Costa y Alameda."></p>
-    <p class="mt-2 text-sm text-white/70">
-      <span data-en="Spanish spoken" data-es="Hablamos español"></span> •
-      <a class="underline hover:text-brand-gold" href="https://instagram.com/luxury.autospa_bayarea" target="_blank">@luxury.autospa_bayarea</a>
-    </p>
-    <div class="mt-6 flex items-center justify-center gap-3">
-      <a href="tel:+14085134353" class="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold bg-brand-gold text-brand-green shadow hover:opacity-90" data-en="Schedule Your Detail" data-es="Agendar Detallado">Schedule Your Detail</a>
-      <a href="https://wa.me/14085134353?text=Hola%20Luxury%20Auto%20Spa%2C%20quiero%20cotizar%20un%20detallado" class="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold border border-white/20 hover:border-white/40" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</a>
+  <!-- Hero -->
+  <a id="top"></a>
+  <section class="text-center py-14 md:py-20">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-brand-gold">Luxury Auto Spa</h1>
+      <p class="mt-4 text-white/90">Professional <b>mobile detailing</b>. We come to you anywhere in <b>Santa Clara</b>, <b>San Mateo</b>, <b>Contra Costa</b>, and <b>Alameda</b> County.</p>
+      <p class="mt-2 text-sm text-white/70">Spanish spoken • <a class="underline hover:text-brand-gold" href="https://instagram.com/luxury.autospa_bayarea" target="_blank">@luxury.autospa_bayarea</a></p>
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <a href="tel:+14085134353" class="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold bg-brand-gold text-brand-green shadow hover:opacity-90">Schedule Your Detail</a>
+        <a href="https://wa.me/14085134353?text=Hola%20Luxury%20Auto%20Spa%2C%20quiero%20cotizar%20un%20detallado" class="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold border border-white/20 hover:border-white/40">WhatsApp</a>
+      </div>
     </div>
   </section>
 
+  <!-- Services / Packages (exact punctuation) -->
   <section id="services" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
-    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6" data-en="Our Packages" data-es="Nuestros Paquetes">Our Packages</h2>
+    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6">Our Luxury Packages</h2>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Standard -->
       <div class="card rounded-2xl p-6">
-        <h3 class="text-xl font-semibold text-brand-gold" data-en="Standard Package" data-es="Paquete Estándar">Standard Package</h3>
-        <p class="mt-1 text-sm text-white/80" data-en="Perfect for regular upkeep and maintaining your vehicle’s shine." data-es="Perfecto para mantenimiento regular y conservar el brillo de tu vehículo."></p>
-        <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li data-en="Exterior hand wash & dry" data-es="Lavado exterior a mano y secado">Exterior hand wash & dry</li>
-          <li data-en="Interior vacuum" data-es="Aspirado interior">Interior vacuum</li>
-          <li data-en="Window cleaning (inside & out)" data-es="Limpieza de vidrios (interior y exterior)">Window cleaning (inside & out)</li>
-          <li data-en="Wheel & tire cleaning" data-es="Limpieza de rines y llantas">Wheel & tire cleaning</li>
-          <li data-en="Interior wipe‑down" data-es="Limpieza superficial interior">Interior wipe‑down</li>
+        <h3 class="text-xl font-semibold text-brand-gold">Standard Package</h3>
+        <p class="mt-1 text-sm text-white/80">Perfect for regular upkeep and maintaining your vehicle’s shine.</p>
+        <p class="mt-3 text-sm text-white/80 font-semibold">Includes:</p>
+        <ul class="mt-2 space-y-2 text-sm text-white/85 list-disc pl-5">
+          <li>Exterior hand wash & dry.</li>
+          <li>Wheel & tire cleaning.</li>
+          <li>Interior vacuum.</li>
+          <li>Window cleaning. (Inside & out)</li>
+          <li>Interior wipe-down.</li>
+          <li>Tire shine application.</li>
         </ul>
-        <p class="mt-4 text-xs text-white/60" data-en="1–1.5 hrs • Recommended every 2 weeks" data-es="1–1.5 hrs • Recomendado cada 2 semanas"></p>
+        <p class="mt-4 text-xs text-white/60">1-1.5hrs duration.</p>
+        <p class="text-xs text-white/60">Recommended every 2 weeks.</p>
       </div>
+
+      <!-- Premium -->
       <div class="card rounded-2xl p-6">
-        <h3 class="text-xl font-semibold text-brand-gold" data-en="Premium Package" data-es="Paquete Premium">Premium Package</h3>
-        <p class="mt-1 text-sm text-white/80" data-en="Ideal for deeper cleaning and added protection." data-es="Ideal para limpieza profunda y protección adicional."></p>
-        <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li data-en="Exterior hand wash & dry" data-es="Lavado exterior a mano y secado">Exterior hand wash & dry</li>
-          <li data-en="Wheel vacuum" data-es="Aspirado de ruedas">Wheel vacuum</li>
-          <li data-en="Deep interior cleaning (vents, dashboard, cup holders)" data-es="Limpieza profunda interior (ventilas, tablero, portavasos)">Deep interior cleaning (vents, dashboard, cup holders)</li>
-          <li data-en="Hand wax or paint sealant" data-es="Cera a mano o sellador de pintura">Hand wax or paint sealant</li>
-          <li data-en="Tire shine application" data-es="Brillo de llantas">Tire shine application</li>
-          <li data-en="Door jambs cleaned & protected" data-es="Limpieza y protección de marcos de puertas">Door jambs cleaned & protected</li>
-          <li data-en="Trim & plastic restoration" data-es="Restauración de plásticos y molduras">Trim & plastic restoration</li>
+        <h3 class="text-xl font-semibold text-brand-gold">Premium Package</h3>
+        <p class="mt-1 text-sm text-white/80">Ideal for vehicles needing deeper cleaning and added protection.</p>
+        <p class="mt-3 text-sm text-white/80 font-semibold">Includes:</p>
+        <ul class="mt-2 space-y-2 text-sm text-white/85 list-disc pl-5">
+          <li>Exterior hand wash & dry.</li>
+          <li>Wheel & tire cleaning.</li>
+          <li>Interior vacuum.</li>
+          <li>Window cleaning. (Inside & out)</li>
+          <li>Deep interior cleaning. (Vents, dashboard, cup holders)</li>
+          <li>Tire shine application.</li>
+          <li>Clay bar treatment. (Removes surfaces contaminants)</li>
+          <li>Hand wax or paint sealant.</li>
+          <li>Door jambs cleaned & protected.</li>
+          <li>Leather & vinyl conditioning.</li>
+          <li>Trim & plastic restoration.</li>
         </ul>
-        <p class="mt-4 text-xs text-white/60" data-en="2–3 hrs • Recommended every 1–2 months" data-es="2–3 hrs • Recomendado cada 1–2 meses"></p>
+        <p class="mt-4 text-xs text-white/60">2-3hrs duration.</p>
+        <p class="text-xs text-white/60">Recommended every 1–2 months.</p>
       </div>
+
+      <!-- Elite -->
       <div class="card rounded-2xl p-6">
-        <h3 class="text-xl font-semibold text-brand-gold" data-en="Elite Package" data-es="Paquete Elite">Elite Package</h3>
-        <p class="mt-1 text-sm text-white/80" data-en="The ultimate detailing experience for luxury and perfection." data-es="La experiencia de detallado definitiva para lujo y perfección."></p>
-        <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li data-en="Exterior hand wash & dry" data-es="Lavado exterior a mano y secado">Exterior hand wash & dry</li>
-          <li data-en="Wheel & tire cleaning" data-es="Limpieza de rines y llantas">Wheel & tire cleaning</li>
-          <li data-en="Interior vacuum" data-es="Aspirado interior">Interior vacuum</li>
-          <li data-en="Window cleaning (inside & out)" data-es="Limpieza de vidrios (interior y exterior)">Window cleaning (inside & out)</li>
-          <li data-en="Full paint decontamination & polish (gloss enhancement)" data-es="Descontaminación completa y pulido (mejora de brillo)">Full paint decontamination & polish (gloss enhancement)</li>
-          <li data-en="Advanced paint sealant" data-es="Sellador de pintura avanzado">Advanced paint sealant</li>
-          <li data-en="Engine bay cleaning & dressing" data-es="Limpieza y embellecimiento de motor">Engine bay cleaning & dressing</li>
-          <li data-en="Steam cleaning of carpets & upholstery" data-es="Limpieza a vapor de alfombras y tapicería">Steam cleaning of carpets & upholstery</li>
-          <li data-en="Headlight restoration" data-es="Restauración de faros">Headlight restoration</li>
+        <h3 class="text-xl font-semibold text-brand-gold">Elite Package</h3>
+        <p class="mt-1 text-sm text-white/80">The ultimate detailing experience for luxury and perfection.</p>
+        <p class="mt-3 text-sm text-white/80 font-semibold">Includes:</p>
+        <ul class="mt-2 space-y-2 text-sm text-white/85 list-disc pl-5">
+          <li>Exterior hand wash & dry.</li>
+          <li>Wheel & tire cleaning.</li>
+          <li>Interior vacuum.</li>
+          <li>Window cleaning. (Inside & out)</li>
+          <li>Deep interior cleaning. (Vents, dashboard, cup holders)</li>
+          <li>Tire shine application.</li>
+          <li>Clay bar treatment. (Removes surfaces contaminants)</li>
+          <li>Hand wax or paint sealant.</li>
+          <li>Door jambs cleaned & protected.</li>
+          <li>Leather & vinyl conditioning.</li>
+          <li>Trim & plastic restoration.</li>
+          <li>Full paint decontamination & polish. (Gloss enhancement)</li>
+          <li>Advanced paint sealant.</li>
+          <li>Engine bay cleaning & dressing.</li>
+          <li>Steam cleaning of carpets and upholstery.</li>
+          <li>Headlight restoration.</li>
+          <li>Premium interior fragrance.</li>
         </ul>
-        <p class="mt-4 text-xs text-white/60" data-en="3–4 hrs • Recommended every 3–6 months" data-es="3–4 hrs • Recomendado cada 3–6 meses"></p>
+        <p class="mt-4 text-xs text-white/60">3-4hrs duration.</p>
+        <p class="text-xs text-white/60">Recommended every 3–6 months or for special occasions.</p>
       </div>
     </div>
   </section>
 
+  <!-- Results Gallery: Before/After -->
   <section id="gallery" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
-    <h2 class="text-3xl md:4xl font-semibold text-brand-gold mb-6" data-en="Results Gallery" data-es="Galería de Resultados">Results Gallery</h2>
-    <p class="text-white/80 mb-4" data-en="Replace these with your real before/after shots." data-es="Reemplaza estas imágenes por tus fotos reales de antes/después."></p>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <img class="rounded-xl border border-white/10" src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=800&auto=format&fit=crop" alt="detail" />
-      <img class="rounded-xl border border-white/10" src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop" alt="detail" />
-      <img class="rounded-xl border border-white/10" src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=800&auto=format&fit=crop" alt="detail" />
-      <img class="rounded-xl border border-white/10" src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=800&auto=format&fit=crop" alt="detail" />
+    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6">Results Gallery</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 gap-2">
+        <div class="relative rounded-xl overflow-hidden border border-white/10">
+          <span class="badge">Before</span>
+          <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2aba8?q=80&w=800&auto=format&fit=crop" alt="before" />
+        </div>
+        <div class="relative rounded-xl overflow-hidden border border-white/10">
+          <span class="badge">After</span>
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop" alt="after" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="relative rounded-xl overflow-hidden border border-white/10">
+          <span class="badge">Before</span>
+          <img src="https://images.unsplash.com/photo-1471440671318-55bdbb772f93?q=80&w=800&auto=format&fit=crop" alt="before" />
+        </div>
+        <div class="relative rounded-xl overflow-hidden border border-white/10">
+          <span class="badge">After</span>
+          <img src="https://images.unsplash.com/photo-1511300636408-a63a89df3482?q=80&w=800&auto=format&fit=crop" alt="after" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="relative rounded-xl overflow-hidden border border-white/10">
+          <span class="badge">Before</span>
+          <img src="https://images.unsplash.com/photo-1619405399517-2900f19c7f5b?q=80&w=800&auto=format&fit=crop" alt="before" />
+        </div>
+        <div class="relative rounded-xl overflow-hidden border border-white/10">
+          <span class="badge">After</span>
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop" alt="after" />
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Reviews -->
   <section id="reviews" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
-    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6" data-en="Client Reviews" data-es="Reseñas de Clientes">Client Reviews</h2>
+    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6">Client Reviews</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="card rounded-2xl p-6">
-        <div class="flex">⭐⭐⭐⭐⭐</div>
-        <p class="mt-3 text-white/85" data-en="Incredible attention to detail. Paint looks deeper than new!" data-es="Increíble atención al detalle. ¡La pintura se ve mejor que nueva!"></p>
-        <p class="mt-2 text-sm text-white/60">— A. Rivera</p>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <div class="flex">⭐⭐⭐⭐⭐</div>
-        <p class="mt-3 text-white/85" data-en="Fast, professional, and honest pricing. Highly recommend." data-es="Rápidos, profesionales y precios honestos. Muy recomendados."></p>
-        <p class="mt-2 text-sm text-white/60">— M. Johnson</p>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <div class="flex">⭐⭐⭐⭐⭐</div>
-        <p class="mt-3 text-white/85" data-en="La mejor experiencia—mi camioneta quedó impecable. ¡Gracias!" data-es="La mejor experiencia—mi camioneta quedó impecable. ¡Gracias!"></p>
-        <p class="mt-2 text-sm text-white/60">— C. García</p>
-      </div>
+      <div class="card rounded-2xl p-6"><div class="flex">⭐⭐⭐⭐⭐</div><p class="mt-3 text-white/85">“Incredible attention to detail. Paint looks deeper than new!”</p><p class="mt-2 text-sm text-white/60">— A. Rivera</p></div>
+      <div class="card rounded-2xl p-6"><div class="flex">⭐⭐⭐⭐⭐</div><p class="mt-3 text-white/85">“Fast, professional, and honest pricing. Highly recommend.”</p><p class="mt-2 text-sm text-white/60">— M. Johnson</p></div>
+      <div class="card rounded-2xl p-6"><div class="flex">⭐⭐⭐⭐⭐</div><p class="mt-3 text-white/85">“La mejor experiencia—mi camioneta quedó impecable. ¡Gracias!”</p><p class="mt-2 text-sm text-white/60">— C. García</p></div>
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
-    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6" data-en="About Us" data-es="Nosotros">About Us</h2>
-    <p class="text-white/85 max-w-3xl" data-en="Luxury Auto Spa is a mobile detailing studio serving the Bay Area. We bring showroom‑level care to your driveway with pH‑neutral products, two‑bucket hand washes, and premium microfiber only. Fully insured. Spanish spoken." data-es="Luxury Auto Spa es un estudio de detallado móvil en el Área de la Bahía. Llevamos el acabado de exhibición a tu entrada usando productos pH‑neutros, lavado a dos cubetas y microfibra premium. Totalmente asegurados. Hablamos español."></p>
+    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6">About Us</h2>
+    <p class="text-white/85 max-w-3xl">Luxury Auto Spa is a mobile detailing studio serving the Bay Area. We bring showroom-level care to your driveway with pH-neutral products, two-bucket hand washes, and premium microfiber only. Fully insured. Spanish spoken.</p>
   </section>
 
+  <!-- Coverage -->
   <section id="coverage" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
-    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6" data-en="Service Coverage" data-es="Zonas de Cobertura">Service Coverage</h2>
-    <p class="text-white/85 mb-4" data-en="We proudly serve the Bay Area — we come to you!" data-es="Servimos con orgullo el Área de la Bahía — ¡Llegamos a donde estés!"></p>
+    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6">Service Coverage</h2>
     <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-white/85">
       <li>Santa Clara County</li>
       <li>San Mateo County</li>
@@ -167,13 +218,14 @@
     </ul>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
-    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6" data-en="Contact" data-es="Contacto">Contact</h2>
+    <h2 class="text-3xl md:text-4xl font-semibold text-brand-gold mb-6">Contact</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <a href="tel:+14085134353" class="card rounded-2xl px-4 py-3 flex items-center gap-3 hover:border-white/30">
         <div class="text-brand-gold">📞</div>
         <div>
-          <p class="text-sm leading-tight" data-en="Phone" data-es="Teléfono">Phone</p>
+          <p class="text-sm leading-tight">Phone</p>
           <p class="text-white/85 text-sm">(408) 513-4353</p>
         </div>
       </a>
@@ -187,41 +239,85 @@
       <div class="card rounded-2xl px-4 py-3 flex items-center gap-3">
         <div class="text-brand-gold">✉️</div>
         <div>
-          <p class="text-sm leading-tight" data-en="Email" data-es="Correo">Email</p>
+          <p class="text-sm leading-tight">Email</p>
           <p class="text-white/85 text-sm">luxuryautospa@gmail.com</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Floating WhatsApp button -->
   <a href="https://wa.me/14085134353?text=Hola%20Luxury%20Auto%20Spa%2C%20quiero%20cotizar%20un%20detallado" class="fixed bottom-5 right-5 rounded-full bg-[#25D366] text-[#0e1b14] font-semibold shadow-lg px-5 py-3 hover:opacity-90">WhatsApp</a>
 
+  <!-- Footer -->
   <footer class="border-t border-white/10 py-8 text-center text-sm text-white/60">
     © <span id="year"></span> Luxury Auto Spa — Mobile Detailing Bay Area. All rights reserved.
   </footer>
 
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile menu
     const btn = document.getElementById('menuBtn');
     const menu = document.getElementById('mobileMenu');
     btn && btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
-    // Language toggle
+
+    // Language toggle (simple EN/ES switch for UI texts)
     let lang = 'en';
-    function applyLang() {
-      const nodes = document.querySelectorAll('[data-en]');
-      nodes.forEach(n => {
-        const txt = n.getAttribute('data-' + lang) || '';
-        if (n.tagName === 'INPUT' || n.tagName === 'TEXTAREA') n.placeholder = txt;
-        else n.textContent = txt;
-      });
+    const langBtn = document.getElementById('langBtn');
+    const langBtnMobile = document.getElementById('langBtnMobile');
+    function t(en, es){ return (lang==='en')? en : es; }
+    function applyLang(){
       document.documentElement.lang = lang;
+      // Desktop nav
+      document.querySelectorAll('nav.desktop-nav a').forEach((a,i)=>{
+        const map = [
+          ['Services','Servicios'],
+          ['Results Gallery','Galería de Resultados'],
+          ['Reviews','Reseñas'],
+          ['About','Nosotros'],
+          ['Contact','Contacto']
+        ];
+        a.textContent = t(map[i][0], map[i][1]);
+      });
+      // Mobile nav
+      document.querySelectorAll('#mobileMenu a').forEach(a=>{
+        const href = a.getAttribute('href')||'';
+        const text = {
+          '#services':['Services','Servicios'],
+          '#gallery':['Results Gallery','Galería de Resultados'],
+          '#reviews':['Reviews','Reseñas'],
+          '#about':['About','Nosotros'],
+          '#contact':['Contact','Contacto']
+        }[href];
+        if(text) a.textContent = t(text[0], text[1]);
+      });
+      // Hero
+      document.querySelector('section:nth-of-type(2) a[href^="tel:"]').textContent = t('Schedule Your Detail','Agendar Detallado');
+      document.querySelector('section:nth-of-type(2) p.mt-4').textContent = t(
+        'Professional mobile detailing. We come to you anywhere in Santa Clara, San Mateo, Contra Costa, and Alameda County.',
+        'Servicio profesional de detallado móvil. Llegamos a donde estés en Santa Clara, San Mateo, Contra Costa y Alameda.'
+      );
+      // Section titles
+      document.querySelector('#services h2').textContent = t('Our Luxury Packages','Nuestros Paquetes de Lujo');
+      document.querySelector('#gallery h2').textContent = t('Results Gallery','Galería de Resultados');
+      document.querySelector('#reviews h2').textContent = t('Client Reviews','Reseñas de Clientes');
+      document.querySelector('#about h2').textContent = t('About Us','Nosotros');
+      document.querySelector('#coverage h2').textContent = t('Service Coverage','Zonas de Cobertura');
+      document.querySelector('#contact h2').textContent = t('Contact','Contacto');
+      // Contact labels
+      document.querySelectorAll('#contact p.text-sm.leading-tight').forEach((el,i)=>{
+        const map = [['Phone','Teléfono'],['Instagram','Instagram'],['Email','Correo']];
+        el.textContent = t(map[i][0], map[i][1]);
+      });
+      // Toggle labels
+      if(langBtn) langBtn.textContent = (lang==='en')? 'EN / ES' : 'ES / EN';
+      if(langBtnMobile) langBtnMobile.textContent = (lang==='en')? 'EN / ES' : 'ES / EN';
     }
+    function toggleLang(){ lang = (lang==='en')?'es':'en'; applyLang(); }
+    langBtn && langBtn.addEventListener('click', toggleLang);
+    langBtnMobile && langBtnMobile.addEventListener('click', toggleLang);
     applyLang();
-    document.getElementById('langBtn').addEventListener('click', () => {
-      lang = (lang === 'en') ? 'es' : 'en';
-      applyLang();
-      document.getElementById('langBtn').textContent = (lang === 'en') ? 'ES / EN' : 'EN / ES';
-    });
   </script>
 </body>
 </html>
